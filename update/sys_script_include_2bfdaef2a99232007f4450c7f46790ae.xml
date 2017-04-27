@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_dashboard.dashboard 1 javascirpt</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>dashboard 1 javascirpt</name>
+        <script><![CDATA[//  ___  ___ _    ___ _____ ___   __  __ ___
+// |   \| __| |  | __|_   _| __| |  \/  | __|
+// | |) | _|| |__| _|  | | | _|  | |\/| | _|
+// |___/|___|____|___| |_| |___| |_|  |_|___|
+// ==========================================
+// 
+// Just for random numbers during the build.
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+// ==========================================
+
+
+//    ___ ___ ___  ___ ___   _   ___ 
+//   / __|_ _|   \| __| _ ) /_\ | _ \
+//   \__ \| || |) | _|| _ \/ _ \|   /
+//   |___/___|___/|___|___/_/ \_\_|_\
+//   
+//   Handles the sidebar opening and closing
+//   http://d.pr/1gW7/4P970L2d
+var sidebar = $('.sidebar');
+$('.sidebar-trigger').click(function(event) {
+    sidebar.addClass('is-open');
+    $(this).addClass('is-hidden');
+});
+
+$('.sidebar-close-trigger').click(function(event) {
+    sidebar.removeClass('is-open');
+    $('.sidebar-trigger').removeClass('is-hidden');
+});
+
+// ==========================================
+//   ___   _  _   _  ___ ___ ___ 
+//  / __| /_\| | | |/ __| __/ __|
+// | (_ |/ _ \ |_| | (_ | _|\__ \
+//  \___/_/ \_\___/ \___|___|___/
+// ==========================================    
+// 
+// Powers each 'dial'
+// http://d.pr/AQ6G/5PL4sN04
+var opts = {
+    lines: 12,
+    angle: -0.1,
+    lineWidth: 0.1,
+    limitMax: "false",
+    percentColors: [
+        [0.0, "#C3E88D"],
+        [0.25, "#89DDFF"],
+        [0.50, "#FFCB6B"],
+        [0.75, "#f07178"],
+        [0.95, "#FF5370"]
+    ], // !!!!
+    strokeColor: "#161824",
+    generateGradient: true,
+    pointer: {
+        length: 0.6, // // Relative to gauge radius
+        strokeWidth: 0, // The thickness
+        color: "#000000" // Fill color
+    }
+};
+
+
+
+if (document.getElementById("dial")) {
+    var target1 = document.getElementById("dial");
+    var dial1 = new Gauge(target1).setOptions(opts);
+
+    dial1.setTextField(target1.nextElementSibling);
+    dial1.maxValue = 300;
+    dial1.animationSpeed = 15;
+    dial1.set(getRandomInt(1, 300));
+}
+
+// =================================================== 
+//    _   _  _ ___ __  __   _ _____ ___ ___  _  _ ___  
+//   /_\ | \| |_ _|  \/  | /_\_   _|_ _/ _ \| \| / __| 
+//  / _ \| .` || || |\/| |/ _ \| |  | | (_) | .` \__ \ 
+// /_/ \_\_|\_|___|_|  |_/_/ \_\_| |___\___/|_|\_|___/ 
+//                                                     
+// =================================================== 
+// 
+// Animating the numbers for each label
+// http://d.pr/Uzze/5G73F7Jj
+function rollCounters(delay) {
+    anime({
+        targets: ".red",
+        innerHTML: getRandomInt(1, 100),
+        round: 1,
+        easing: "easeOutExpo",
+        duration: 1750,
+        delay: delay
+    });
+
+    anime({
+        targets: ".blue",
+        innerHTML: getRandomInt(1, 100),
+        round: 1,
+        easing: "easeOutExpo",
+        duration: 1750,
+        delay: delay
+    });
+
+    anime({
+        targets: ".yellow",
+        innerHTML: getRandomInt(1, 100),
+        round: 1,
+        easing: "easeOutExpo",
+        duration: 1750,
+        delay: delay
+    });
+
+    anime({
+        targets: ".green",
+        innerHTML: getRandomInt(1, 100),
+        round: 1,
+        easing: "easeOutExpo",
+        duration: 1750,
+        delay: delay
+    });
+    
+    anime({
+        targets: ".team-sales",
+        innerHTML: numberWithCommas(getRandomInt(50000, 99999)),
+        round: 1,
+        easing: "easeOutExpo",
+        duration: 3000
+    });    
+
+    anime({
+        targets: ".total-sales",
+        innerHTML: numberWithCommas(getRandomInt(100000, 500000)),
+        round: 1,
+        easing: "easeOutExpo",
+        duration: 3000
+    });
+
+}
+
+// Fades in each row when the page loads
+// http://d.pr/rYwL/57gkKHGv
+var statdivs = anime({
+    targets: ".stat",
+    translateY: -150,
+    offset: -150,
+    duration: 2000,
+    opacity: 1,
+    easing: "easeOutQuint",
+    elasticity: 1000,
+    delay: function(el, i, l) {
+        return i * 150;
+    },
+    begin: function() {
+        rollCounters(150);
+        // Delay the labeled integers so it coindices
+        // with the staggered animations
+    }
+});
+
+var statdivs = anime({
+    targets: ".stagger",
+    translateY: -150,
+    offset: -150,
+    duration: 2000,
+    opacity: 1,
+    easing: "easeOutQuint",
+    elasticity: 1000,
+    delay: function(el, i, l) {
+        return i * 150;
+    },
+    begin: function() {
+        rollCounters(150);
+    }
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-27 04:08:17</sys_created_on>
+        <sys_id>2bfdaef2a99232007f4450c7f46790ae</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>dashboard 1 javascirpt</sys_name>
+        <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
+        <sys_update_name>sys_script_include_2bfdaef2a99232007f4450c7f46790ae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-04-27 04:10:43</sys_updated_on>
+    </sys_script_include>
+</record_update>

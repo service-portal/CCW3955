@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
-        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+	
+	function getRandomInt(min, max) {
+    //debugger;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	function numberWithCommas(x) {
+			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+	
+	var opts = {
+    lines: 12,
+    angle: -0.1,
+    lineWidth: 0.1,
+    limitMax: "false",
+    percentColors: [
+        [0.0, "#C3E88D"],
+        [0.25, "#89DDFF"],
+        [0.50, "#FFCB6B"],
+        [0.75, "#f07178"],
+        [0.95, "#FF5370"]
+    ], // !!!!
+    strokeColor: "#161824",
+    generateGradient: true,
+    pointer: {
+        length: 0.6, // // Relative to gauge radius
+        strokeWidth: 0, // The thickness
+        color: "#000000" // Fill color
+    }
+	};
+
+	if (document.getElementById("dial")) {
+		
+			var target1 = document.getElementById("dial");
+			var dial1 = new Gauge(target1).setOptions(opts);
+
+			dial1.setTextField(target1.nextElementSibling);
+			dial1.maxValue = 300;
+			dial1.animationSpeed = 15;
+			dial1.set(getRandomInt(1, 300));
+	}
+	
+	
+}]]></client_script>
         <controller_as>c</controller_as>
         <css/>
         <data_table>sp_instance</data_table>
@@ -23,14 +69,72 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-26 21:45:21</sys_created_on>
         <sys_id>2e86d5bea91232007f4450c7f46790d7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>dashboard-summary-row</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_widget_2e86d5bea91232007f4450c7f46790d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-04-26 21:45:21</sys_updated_on>
-        <template><![CDATA[<div><!-- your widget template --></div>]]></template>
+        <sys_updated_on>2017-04-27 05:47:40</sys_updated_on>
+        <template><![CDATA[<div class="stat flex">
+
+                <div class="chart flex">
+                    <div class="chart-placeholder"></div>
+                </div> <!-- chart -->
+
+                <div class="gauge col-lg-6 flex">
+                    <div class="col-md-6 flex align-center">
+                        <div class="relative">
+                            <canvas id="dial" style="width: 100%;" height="150" width="300"></canvas>
+                            <div class="count">38</div>
+                        </div>
+                    </div>
+                    <div class="flex col-lg-6 list-data">
+                        <ul class="col-lg-12">
+                            <li>
+                                <div>
+                                    <div class="col-md-4"><strong>2.54k</strong></div> <div class="col-md-8">RPM</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="col-md-4"><strong>0%</strong></div> <div class="col-md-8">Error Rate</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="col-md-4"><strong>18</strong></div> <div class="col-md-8">Jobs</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="col-md-4"><strong>0/160</strong></div> <div class="col-md-8">Workers</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- gauge-wrapper -->
+
+                <div class="metric col-md-6 flex">
+                    <div class="col-md-3">
+                        <h2 class="red" id="red">10</h2>
+                        <p>Label</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="blue">49</h2>
+                        <p>Label</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="yellow">74</h2>
+                        <p>Label</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="green">20</h2>
+                        <p>Label</p>
+                    </div>
+                </div> <!-- metric -->
+
+            </div> <!-- stat -->]]></template>
     </sp_widget>
 </record_update>
