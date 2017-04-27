@@ -1,459 +1,468 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sp_page">
     <sp_page action="INSERT_OR_UPDATE">
-        <css>* {&#13;
-  box-sizing: border-box;&#13;
-}&#13;
-&#13;
-html, body {&#13;
-  margin: 0;&#13;
-  padding: 0;&#13;
-  height: 100%;&#13;
-  min-height: 100%;&#13;
-  -webkit-font-smoothing: antialiased;&#13;
-}&#13;
-&#13;
-.container {&#13;
-  width: 100%;&#13;
-  padding: 0;&#13;
-}&#13;
-&#13;
-.header-container{&#13;
-  padding: 20px 0 0 20px;&#13;
-}&#13;
-&#13;
-header {&#13;
-  display: none;&#13;
-}&#13;
-&#13;
-.header {&#13;
-  width: 100%;&#13;
-  background: #3d435e;&#13;
-}&#13;
-&#13;
-h2.time {&#13;
-  font-size: 1.5em;&#13;
-}&#13;
-&#13;
-body {&#13;
-  background: #292D3F;&#13;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;&#13;
-  font-weight: 400;&#13;
-  color: #fff;&#13;
-  font-size: 16px;&#13;
-}&#13;
-&#13;
-.body.padding-top{&#13;
-  padding-top: 0;&#13;
-  &#13;
-}&#13;
-&#13;
-body.light-theme {&#13;
-  background: #292D3F;&#13;
-  color: #fff;&#13;
-}&#13;
-&#13;
-h1, h2, h3, h4, h5 {&#13;
-  line-height: 1;&#13;
-  padding: 0;&#13;
-  margin: 0;&#13;
-}&#13;
-&#13;
-ul {&#13;
-  margin: 0;&#13;
-  padding: 0;&#13;
-  list-style: none;&#13;
-}&#13;
-&#13;
-p {&#13;
-  margin-top: 0;&#13;
-  margin-bottom: 20px;&#13;
-}&#13;
-&#13;
-.flex {&#13;
-  display: flex;&#13;
-}&#13;
-&#13;
-.flex-row {&#13;
-  flex-direction: row;&#13;
-}&#13;
-&#13;
-.flex-column {&#13;
-  flex-direction: column;&#13;
-}&#13;
-&#13;
-.wrapper {&#13;
-  align-content: stretch;&#13;
-  height: 100vh;&#13;
-  width: 100%;&#13;
-}&#13;
-&#13;
-.align-center {&#13;
-  align-items: center;&#13;
-}&#13;
-&#13;
-.relative {&#13;
-  position: relative;&#13;
-}&#13;
-&#13;
-.is-hidden {&#13;
-  opacity: 0;&#13;
-  pointer-events: none;&#13;
-}&#13;
-&#13;
-header {&#13;
-  padding: 20px;&#13;
-  background: #3d435e;&#13;
-  justify-content: space-between;&#13;
-  align-items: center;&#13;
-}&#13;
-&#13;
-header:nth-child(1) {&#13;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);&#13;
-}&#13;
-&#13;
-canvas {&#13;
-  width: 100%;&#13;
-}&#13;
-&#13;
-.stat {&#13;
-  flex: 1;&#13;
-  overflow-y: hidden;&#13;
-  /* opacity: 0; cmm */&#13;
-  position: relative;&#13;
-  /* top: 150px;* cmm */&#13;
-}&#13;
-&#13;
-.stat:nth-child(odd) {&#13;
-  background: #33384e;&#13;
-}&#13;
-&#13;
-.stat &gt; div {&#13;
-  padding: 20px;&#13;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);&#13;
-}&#13;
-&#13;
-.stat img {&#13;
-  max-width: 100%;&#13;
-}&#13;
-&#13;
-.chart {&#13;
-  flex: 0 0 270px;&#13;
-}&#13;
-&#13;
-.count {&#13;
-  position: absolute;&#13;
-  transform: translateX(-50%);&#13;
-  top: 45%;&#13;
-  left: 50%;&#13;
-  font-size: 48px;&#13;
-  font-weight: 700;&#13;
-}&#13;
-&#13;
-.d2-sidebar {&#13;
-  flex: 0 0 250px;&#13;
-  height: 100vh;&#13;
-  background: #1f2230;&#13;
-  font-size: 16px;&#13;
-}&#13;
-&#13;
-.d2-sidebar.center {&#13;
-  text-align: center;&#13;
-}&#13;
-&#13;
-.d2-sidebar.space-between {&#13;
-  justify-content: space-between;&#13;
-}&#13;
-&#13;
-.d2-sidebar .buffer {&#13;
-  padding: 30px;&#13;
-}&#13;
-&#13;
-.d2-sidebar svg {&#13;
-  fill: #fff;&#13;
-  width: 18px;&#13;
-}&#13;
-&#13;
-.d2-sidebar a {&#13;
-  color: #fff;&#13;
-  text-decoration: none;&#13;
-  font-weight: 100;&#13;
-  font-size: 16px;&#13;
-  display: flex;&#13;
-  justify-content: flex-start;&#13;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);&#13;
-}&#13;
-&#13;
-.d2-sidebar a svg {&#13;
-  margin-right: 18px;&#13;
-}&#13;
-&#13;
-.d2-sidebar a div {&#13;
-  display: flex;&#13;
-  align-items: center;&#13;
-}&#13;
-&#13;
-.d2-sidebar a:hover {&#13;
-  background: rgba(255, 255, 255, 0.1);&#13;
-  border-bottom: 1px solid transparent;&#13;
-}&#13;
-&#13;
-.d2-logo {&#13;
-  background: #FF5370;&#13;
-  text-align: center;&#13;
-  padding: 25px 0;&#13;
-}&#13;
-&#13;
-.d2-logo svg {&#13;
-  width: 35px;&#13;
-}&#13;
-&#13;
-.d2-manager {&#13;
-  padding: 45px 0 25px;&#13;
-  margin-bottom: 25px;&#13;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);&#13;
-}&#13;
-&#13;
-.d2-manager img {&#13;
-  max-width: 75px;&#13;
-  border-radius: 50px;&#13;
-  margin-bottom: 20px;&#13;
-  vertical-align: middle;&#13;
-}&#13;
-&#13;
-.d2-content {&#13;
-  align-items: center;&#13;
-  width: 100%;&#13;
-}&#13;
-&#13;
-.d2-content &gt; div {&#13;
-  align-items: center;&#13;
-  width: 100%;&#13;
-  position: relative;&#13;
-  top: 150px;&#13;
-  opacity: 0;&#13;
-}&#13;
-&#13;
-.d2-team-list img {&#13;
-  max-width: 75px;&#13;
-  border-radius: 50px;&#13;
-  vertical-align: middle;&#13;
-}&#13;
-&#13;
-.d2-team-list p {&#13;
-  margin: 10px 0;&#13;
-}&#13;
-&#13;
-.team-member {&#13;
-  margin-bottom: 30px;&#13;
-}&#13;
-&#13;
-.report {&#13;
-  width: 100%;&#13;
-}&#13;
-&#13;
-.report a {&#13;
-  justify-content: center;&#13;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);&#13;
-}&#13;
-&#13;
-.report a:hover {&#13;
-  border-top: 1px solid transparent;&#13;
-}&#13;
-&#13;
-.d2-counter {&#13;
-  font-size: 44px;&#13;
-  font-weight: 200;&#13;
-}&#13;
-&#13;
-.sales {&#13;
-  flex: 0 1 auto !important;&#13;
-  height: 220px;&#13;
-  background: rgba(0, 0, 0, 0.1);&#13;
-}&#13;
-&#13;
-.legend {&#13;
-  flex: 0 1 auto !important;&#13;
-}&#13;
-&#13;
-.legend &gt; div {&#13;
-  width: 100%;&#13;
-}&#13;
-&#13;
-.team-label {&#13;
-  height: 100%;&#13;
-  width: 100%;&#13;
-  text-align: center;&#13;
-  display: flex;&#13;
-  position: relative;&#13;
-  top: 150px;&#13;
-  opacity: 0;&#13;
-}&#13;
-&#13;
-.team-label:hover {&#13;
-  background: rgba(255, 255, 255, 0.1);&#13;
-}&#13;
-&#13;
-.team-label a {&#13;
-  display: inline-block;&#13;
-  width: 100%;&#13;
-  text-decoration: none;&#13;
-  color: #fff;&#13;
-  margin: auto;&#13;
-  padding: 40px 0;&#13;
-}&#13;
-&#13;
-.chart-container {&#13;
-  flex: 1 0 auto;&#13;
-}&#13;
-&#13;
-.team-color {&#13;
-  height: 15px;&#13;
-  width: 15px;&#13;
-  display: inline-block;&#13;
-  border-radius: 3px;&#13;
-}&#13;
-&#13;
-.team-color.team-red {&#13;
-  background: #FF5370;&#13;
-}&#13;
-&#13;
-.team-color.team-green {&#13;
-  background: #C3E88D;&#13;
-}&#13;
-&#13;
-.team-color.team-blue {&#13;
-  background: #82AAFF;&#13;
-}&#13;
-&#13;
-.team-color.team-violet {&#13;
-  background: #bb80b3;&#13;
-}&#13;
-&#13;
-.team-color.team-yellow {&#13;
-  background: #FFCB6B;&#13;
-}&#13;
-&#13;
-.team-percentage {&#13;
-  margin: 35px 0;&#13;
-}&#13;
-&#13;
-.metric {&#13;
-  align-items: center;&#13;
-}&#13;
-&#13;
-.metric h2 {&#13;
-  border-bottom: 2px solid #fff;&#13;
-  text-align: center;&#13;
-  padding-bottom: 10px;&#13;
-  margin-bottom: 10px;&#13;
-  font-size: 48px;&#13;
-  font-weight: 400;&#13;
-}&#13;
-&#13;
-.metric h2.red {&#13;
-  border-color: #FF5370;&#13;
-}&#13;
-&#13;
-.metric h2.blue {&#13;
-  border-color: #82AAFF;&#13;
-}&#13;
-&#13;
-.metric h2.yellow {&#13;
-  border-color: #FFCB6B;&#13;
-}&#13;
-&#13;
-.metric h2.green {&#13;
-  border-color: #C3E88D;&#13;
-}&#13;
-&#13;
-.metric p {&#13;
-  text-align: center;&#13;
-}&#13;
-&#13;
-.sidebar {&#13;
-  flex: 0 0 0;&#13;
-  overflow: hidden;&#13;
-  transition: 750ms flex cubic-bezier(0.23, 1, 0.32, 1);&#13;
-}&#13;
-&#13;
-.sidebar header {&#13;
-  height: 64px;&#13;
-}&#13;
-&#13;
-.sidebar.is-open {&#13;
-  flex: 0 0 400px;&#13;
-}&#13;
-&#13;
-.sidebar.is-open .sidebar-content, .sidebar.is-open h2 {&#13;
-  opacity: 1;&#13;
-  transition-delay: 150ms;&#13;
-  transition: 550ms opacity cubic-bezier(0.23, 1, 0.32, 1);&#13;
-}&#13;
-&#13;
-.sidebar li {&#13;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);&#13;
-  padding: 15px;&#13;
-}&#13;
-&#13;
-.sidebar li p {&#13;
-  margin-bottom: 0;&#13;
-  padding: 0;&#13;
-  font-size: 14px;&#13;
-}&#13;
-&#13;
-.sidebar p {&#13;
-  margin-bottom: 0;&#13;
-  padding: 15px;&#13;
-}&#13;
-&#13;
-.sidebar-content, .sidebar h2 {&#13;
-  opacity: 0;&#13;
-  transition: 200ms opacity cubic-bezier(0.23, 1, 0.32, 1);&#13;
-  transition-delay: 0;&#13;
-}&#13;
-&#13;
-.sidebar-trigger, .sidebar-close-trigger {&#13;
-  transition: 350ms opacity cubic-bezier(0.23, 1, 0.32, 1);&#13;
-}&#13;
-&#13;
-.list-data {&#13;
-  align-items: center;&#13;
-}&#13;
-&#13;
-.list-data li {&#13;
-  list-style: none;&#13;
-  font-size: 18px;&#13;
-  padding-bottom: 20px;&#13;
-  margin-bottom: 20px;&#13;
-}&#13;
-&#13;
-.list-data li:last-child {&#13;
-  margin-bottom: 0;&#13;
-  padding-bottom: 0;&#13;
-}&#13;
-&#13;
-.list-data li strong {&#13;
-  min-width: 70px;&#13;
-  font-weight: 900;&#13;
-  display: inline-block;&#13;
-}&#13;
-&#13;
-.list-data li span {&#13;
-  display: inline-block;&#13;
-}&#13;
-&#13;
-.gauge {&#13;
-  position: relative;&#13;
-}&#13;
-&#13;
-.chart-placeholder, .gauge-placeholder {&#13;
-  height: 90%;&#13;
-  width: 90%;&#13;
-  background: #000;&#13;
-  border-radius: 4px;&#13;
-  margin: auto;&#13;
-}&#13;
+        <css>* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  padding: 0;
+}
+
+.header-container{
+  padding: 20px 0 0 20px;
+}
+
+header {
+  display: none;
+}
+
+.header {
+  width: 100%;
+  background: #3d435e;
+}
+
+h2.time {
+  font-size: 1.5em;
+}
+
+body {
+  background: #292D3F;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  font-size: 16px;
+}
+
+.body.padding-top{
+  padding-top: 0;
+  
+}
+
+body.light-theme {
+  background: #292D3F;
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5 {
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+main {
+	overflow: hidden;
+}
+
+.stat {
+    flex: 1;
+    overflow-y: hidden;
+    
+    // Offset to account for the animation
+    opacity: 0;
+    position: relative;
+    top: 150px;
+
+
+    &amp;:nth-child(odd) {
+        background: lighten($bg, 5);
+    }
+
+    &amp; &gt; div {
+        padding: 20px;
+        border-bottom: 1px solid rgba($text, 0.1);
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.wrapper {
+  align-content: stretch;
+  height: 100vh;
+  width: 100%;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+header {
+  padding: 20px;
+  background: #3d435e;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header:nth-child(1) {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+canvas {
+  width: 100%;
+}
+
+
+
+.chart {
+  flex: 0 0 270px;
+}
+
+.count {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 45%;
+  left: 50%;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.d2-sidebar {
+  flex: 0 0 250px;
+  height: 100vh;
+  background: #1f2230;
+  font-size: 16px;
+}
+
+.d2-sidebar.center {
+  text-align: center;
+}
+
+.d2-sidebar.space-between {
+  justify-content: space-between;
+}
+
+.d2-sidebar .buffer {
+  padding: 30px;
+}
+
+.d2-sidebar svg {
+  fill: #fff;
+  width: 18px;
+}
+
+.d2-sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 16px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.d2-sidebar a svg {
+  margin-right: 18px;
+}
+
+.d2-sidebar a div {
+  display: flex;
+  align-items: center;
+}
+
+.d2-sidebar a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid transparent;
+}
+
+.d2-logo {
+  background: #FF5370;
+  text-align: center;
+  padding: 25px 0;
+}
+
+.d2-logo svg {
+  width: 35px;
+}
+
+.d2-manager {
+  padding: 45px 0 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.d2-manager img {
+  max-width: 75px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  vertical-align: middle;
+}
+
+.d2-content {
+  align-items: center;
+  width: 100%;
+}
+
+.d2-content &gt; div {
+  align-items: center;
+  width: 100%;
+  position: relative;
+  top: 150px;
+  opacity: 0;
+}
+
+.d2-team-list img {
+  max-width: 75px;
+  border-radius: 50px;
+  vertical-align: middle;
+}
+
+.d2-team-list p {
+  margin: 10px 0;
+}
+
+.team-member {
+  margin-bottom: 30px;
+}
+
+.report {
+  width: 100%;
+}
+
+.report a {
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.report a:hover {
+  border-top: 1px solid transparent;
+}
+
+.d2-counter {
+  font-size: 44px;
+  font-weight: 200;
+}
+
+.sales {
+  flex: 0 1 auto !important;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.legend {
+  flex: 0 1 auto !important;
+}
+
+.legend &gt; div {
+  width: 100%;
+}
+
+.team-label {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  position: relative;
+  top: 150px;
+  opacity: 0;
+}
+
+.team-label:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.team-label a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  margin: auto;
+  padding: 40px 0;
+}
+
+.chart-container {
+  flex: 1 0 auto;
+}
+
+.team-color {
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.team-color.team-red {
+  background: #FF5370;
+}
+
+.team-color.team-green {
+  background: #C3E88D;
+}
+
+.team-color.team-blue {
+  background: #82AAFF;
+}
+
+.team-color.team-violet {
+  background: #bb80b3;
+}
+
+.team-color.team-yellow {
+  background: #FFCB6B;
+}
+
+.team-percentage {
+  margin: 35px 0;
+}
+
+.metric {
+  align-items: center;
+}
+
+.metric h2 {
+  border-bottom: 2px solid #fff;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.metric h2.red {
+  border-color: #FF5370;
+}
+
+.metric h2.blue {
+  border-color: #82AAFF;
+}
+
+.metric h2.yellow {
+  border-color: #FFCB6B;
+}
+
+.metric h2.green {
+  border-color: #C3E88D;
+}
+
+.metric p {
+  text-align: center;
+}
+
+.sidebar {
+  flex: 0 0 0;
+  overflow: hidden;
+  transition: 750ms flex cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sidebar header {
+  height: 64px;
+}
+
+.sidebar.is-open {
+  flex: 0 0 400px;
+}
+
+.sidebar.is-open .sidebar-content, .sidebar.is-open h2 {
+  opacity: 1;
+  transition-delay: 150ms;
+  transition: 550ms opacity cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sidebar li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+}
+
+.sidebar li p {
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.sidebar p {
+  margin-bottom: 0;
+  padding: 15px;
+}
+
+.sidebar-content, .sidebar h2 {
+  opacity: 0;
+  transition: 200ms opacity cubic-bezier(0.23, 1, 0.32, 1);
+  transition-delay: 0;
+}
+
+.sidebar-trigger, .sidebar-close-trigger {
+  transition: 350ms opacity cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.list-data {
+  align-items: center;
+}
+
+.list-data li {
+  list-style: none;
+  font-size: 18px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.list-data li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.list-data li strong {
+  min-width: 70px;
+  font-weight: 900;
+  display: inline-block;
+}
+
+.list-data li span {
+  display: inline-block;
+}
+
+.gauge {
+  position: relative;
+}
+
+.chart-placeholder, .gauge-placeholder {
+  height: 90%;
+  width: 90%;
+  background: #000;
+  border-radius: 4px;
+  margin: auto;
+}
 </css>
         <draft>false</draft>
         <id>dashboard_1</id>
@@ -465,14 +474,14 @@ canvas {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-26 21:18:54</sys_created_on>
         <sys_id>0b70917aa91232007f4450c7f46790dc</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_name>dashboard_1</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_page_0b70917aa91232007f4450c7f46790dc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-04-27 05:55:59</sys_updated_on>
+        <sys_updated_on>2017-04-27 17:12:55</sys_updated_on>
         <title>Dashboard 1</title>
     </sp_page>
     <sys_translated_text action="delete_multiple" query="documentkey=0b70917aa91232007f4450c7f46790dc"/>

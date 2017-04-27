@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_dependency">
+    <sp_dependency action="INSERT_OR_UPDATE">
+        <module/>
+        <name>Dashboard scripts</name>
+        <page_load>true</page_load>
+        <sp_portals/>
+        <sys_class_name>sp_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-27 14:55:28</sys_created_on>
+        <sys_id>da42498ba91632007f4450c7f4679060</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Dashboard scripts</sys_name>
+        <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
+        <sys_update_name>sp_dependency_da42498ba91632007f4450c7f4679060</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-04-27 14:55:28</sys_updated_on>
+    </sp_dependency>
+</record_update>

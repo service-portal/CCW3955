@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="m2m_sp_dependency_js_include">
+    <m2m_sp_dependency_js_include action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <sp_dependency display_value="Dashboard scripts">da42498ba91632007f4450c7f4679060</sp_dependency>
+        <sp_js_include display_value="dashboard 1 scripts">6252498ba91632007f4450c7f46790cc</sp_js_include>
+        <sys_class_name>m2m_sp_dependency_js_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-27 14:55:50</sys_created_on>
+        <sys_id>6162498ba91632007f4450c7f46790fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Dashboard scripts.dashboard 1 scripts</sys_name>
+        <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
+        <sys_update_name>m2m_sp_dependency_js_include_6162498ba91632007f4450c7f46790fc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-04-27 14:55:50</sys_updated_on>
+    </m2m_sp_dependency_js_include>
+</record_update>

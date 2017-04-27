@@ -4,9 +4,9 @@
         <background_color/>
         <background_image/>
         <background_style>default</background_style>
-        <bootstrap_alt>false</bootstrap_alt>
+        <bootstrap_alt>true</bootstrap_alt>
         <class_name/>
-        <container_class_name/>
+        <container_class_name>dashboard-two-container</container_class_name>
         <name>Dashboard 2 - Container 1</name>
         <order>1</order>
         <sp_page display_value="dashboard_2">a49051baa91232007f4450c7f4679037</sp_page>
@@ -15,14 +15,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-26 21:19:17</sys_created_on>
         <sys_id>609051baa91232007f4450c7f4679039</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Dashboard 2 - Container 1</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_container_609051baa91232007f4450c7f4679039</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-04-26 21:19:17</sys_updated_on>
+        <sys_updated_on>2017-04-27 18:09:16</sys_updated_on>
         <title/>
         <width>container</width>
     </sp_container>

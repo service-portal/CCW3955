@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sp_portal">
     <sp_portal action="INSERT_OR_UPDATE">
-        <css_variables/>
+        <css_variables>$bg:          #292D3F;
+$text:        #fff;  
+$red:         #FF5370;
+$pink:        #f07178;
+$orange:      #F78C6C;
+$yellow:      #FFCB6B;
+$green:       #C3E88D;
+$cyan:        #89DDFF;
+$blue:        #82AAFF;
+$purple:      #C792EA;
+$violet:      #bb80b3;
+$brown:       #ab7967;</css_variables>
         <default>true</default>
         <homepage display_value="dashboard_1">0b70917aa91232007f4450c7f46790dc</homepage>
         <icon/>
@@ -21,14 +32,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-26 21:19:59</sys_created_on>
         <sys_id>aea01dbaa91232007f4450c7f4679046</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Dashboard 1</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_portal_aea01dbaa91232007f4450c7f4679046</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-04-27 06:13:00</sys_updated_on>
+        <sys_updated_on>2017-04-27 15:06:55</sys_updated_on>
         <theme display_value="k17">646a0bf2a9d232007f4450c7f4679072</theme>
         <title>Dashboard 1</title>
         <url_suffix>d1</url_suffix>
