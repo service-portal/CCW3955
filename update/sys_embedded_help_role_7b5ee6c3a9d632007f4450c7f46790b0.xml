@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="sp_charts_instance_table_user" name="sp_charts_instance_table_user">f31e1b16e7923200cda9a117c2f6a9c2</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2017-04-27 22:47:35</sys_created_on>
+        <sys_id>7b5ee6c3a9d632007f4450c7f46790b0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>f31e1b16e7923200cda9a117c2f6a9c2</sys_name>
+        <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
+        <sys_update_name>sys_embedded_help_role_7b5ee6c3a9d632007f4450c7f46790b0</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2017-04-27 22:47:35</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>
