@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope, spUtil) {
+	function colorizeChart(data, theme) {
+		colors = [
+			'rgba(0,200,100,0.5)',
+			'rgba(255,50,0,0.5)',
+			'rgba(50,50,200,0.5)',
+			'rgba(255,255,50,0.5)',
+			'rgba(255,50,255,0.5)',
+			'rgba(0,255,255,0.5)',
+			'rgba(128,255,128,0.5)',
+			'rgba(255,128,0,.5)',
+			'rgba(166,144,113,.5)',
+			'rgba(255,255,100,0.5)'
+		];
+		
+		data.datasets.forEach(function(ds, i) {
+			ds.backgroundColor = colors[i];
+		});
+	}
+	
+  var c = this;
+	
+	if(!c.options.table) { return; }
+	
+	spUtil.recordWatch($scope, c.options.table, c.options.filter, function() {
+		c.data.chartData = null;
+		c.server.update().then(function(){
+			colorizeChart(c.data.chartData, c.options.color_theme);
+		});
+	});
+	
+	colorizeChart(c.data.chartData, c.options.color_theme);
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.snc-sp-chart-light,&#13;
+.snc-sp-chart-dark {&#13;
+  padding: 10px;&#13;
+  &#13;
+  h4 {&#13;
+    text-align: center;&#13;
+    margin-top: 0;&#13;
+  }&#13;
+}&#13;
+&#13;
+.snc-sp-chart-dark {&#13;
+  h4 {&#13;
+    color: #ccc;&#13;
+  }&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data>{
+  "options": {
+		"table": "incident",
+		"display_field": "assignment_group",
+		"color_theme": "dark",
+		"filter": "active=true^EQ",
+		"aggregation_function": "COUNT",
+		"trend_field": "opened_at",
+		"trend_field_ref": "timeref",
+		"trend": "Month",
+	  "chart_type": "line-area",
+		"null_value": "0"
+	}
+}</demo_data>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>trend-chart</id>
+        <internal>false</internal>
+        <link/>
+        <name>Trend Chart</name>
+        <option_schema>[{"name":"table","label":"Table","type":"string"},{"name":"display_field","label":"Display Field","type":"string"},{"name":"filter","label":"Filter","type":"string"},{"name":"aggregation_function","label":"Aggregation Function","type":"string"},{"name":"trend_field","label":"Trend Field","type":"string"},{"name":"trend_field_ref","label":"Trend Field Ref","type":"string"},{"name":"trend","label":"Trend","type":"string"},{"name":"color_theme","label":"Color Theme","type":"choice","choices":[{"label":"Dark","value":"Dark"},{"label":"Light","value":"Light"}]},{"name":"chart_type","default_value":"","label":"Chart Type","type":"string"},{"name":"null_value","default_value":"","label":"Null Value","type":"string"}]</option_schema>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	if(!options.table) return;
+	
+	function getChartData(options) {
+		var trend = new GlideAggregate(options.table);
+	
+		trend.addTrend (options.trend_field, options.trend);
+		trend.groupBy(options.display_field);
+		trend.addAggregate(options.aggregation_function);
+		trend.query();
+		
+		var data = {};
+		var categories = {};
+		
+		while(trend.next()) {
+			var label = trend.getValue(options.trend_field_ref);
+			var category = trend.getDisplayValue(options.display_field) || '(' + gs.getMessage('empty') + ')';
+			var value = trend.getAggregate(options.aggregation_function);
+
+			data[label] = "_";
+			categories[category] = categories[category] || {};
+			categories[category][label] = value;
+		}
+		
+		var labels = Object.keys(data);
+		var chartData = {
+			labels: labels,
+			datasets: []
+		};
+		
+		Object.keys(categories).forEach(function(category) {
+			var dt = {
+				label: category,
+				data: []
+			}
+			
+			labels.forEach(function(label) {
+				dt.data.push(categories[category][label] || options.null_value);
+			});
+			
+			chartData.datasets.push(dt);
+		});
+		
+		return chartData;
+	}
+	
+	function getChartOptions(options) {
+		var opts = {
+			responsive: true,
+      maintainAspectRatio: false
+		};
+		
+		if(options.hide_legend) {
+			opts.legend = {
+				display: false
+			};
+		}
+		
+		if(options.color_theme === 'dark') {
+			opts.defaultFontColor = '#ccc';
+			opts.scales = {
+				xAxes: [{
+					gridLines: {
+						color: 'rgba(255,255,255,0.1)',
+						zeroLineColor: 'rgba(255,255,255,0.25)'
+					}
+				}],
+				yAxes: [{
+					gridLines: {
+						color: 'rgba(255,255,255,0.1)',
+						zeroLineColor: 'rgba(255,255,255,0.25)'
+					}
+				}]
+			};
+		}
+		
+		return opts;
+	}
+	
+	data.chartData = getChartData(options);
+	data.chartOptions = getChartOptions(options);
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-28 23:10:03</sys_created_on>
+        <sys_id>f61df793e7923200cda9a117c2f6a9a8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Trend Chart</sys_name>
+        <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
+        <sys_update_name>sp_widget_f61df793e7923200cda9a117c2f6a9a8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-04-28 23:10:27</sys_updated_on>
+        <template><![CDATA[<div class="snc-sp-chart-{{c.options.color_theme || 'light'}}">
+  <h4 ng-if="c.options.title">{{c.options.title}}</h4>
+  <sp-chart ng-if="c.options.table" chart-type="{{c.options.chart_type}}" chart-data="c.data.chartData" chart-opts="{{c.data.chartOptions}}"></sp-chart>
+  <div ng-if="!c.options.table">
+    Chart has not been configured!
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
