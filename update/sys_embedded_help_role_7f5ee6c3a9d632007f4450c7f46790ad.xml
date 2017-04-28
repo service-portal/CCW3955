@@ -2,7 +2,7 @@
 <record_update table="sys_embedded_help_role">
     <sys_embedded_help_role action="INSERT_OR_UPDATE">
         <order>1000</order>
-        <role display_value="u_reserved_instance_user" name="u_reserved_instance_user">744dcac61d4231007f445d6f2a7d0920</role>
+        <role display_value="">744dcac61d4231007f445d6f2a7d0920</role>
         <sys_class_name>sys_embedded_help_role</sys_class_name>
         <sys_created_by>system</sys_created_by>
         <sys_created_on>2017-04-27 22:47:34</sys_created_on>

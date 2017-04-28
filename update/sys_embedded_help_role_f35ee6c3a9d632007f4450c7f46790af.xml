@@ -2,7 +2,7 @@
 <record_update table="sys_embedded_help_role">
     <sys_embedded_help_role action="INSERT_OR_UPDATE">
         <order>1000</order>
-        <role display_value="u_paired_instance_user" name="u_paired_instance_user">eda3e5d0c37231002704d9ad81d3ae80</role>
+        <role display_value="">eda3e5d0c37231002704d9ad81d3ae80</role>
         <sys_class_name>sys_embedded_help_role</sys_class_name>
         <sys_created_by>system</sys_created_by>
         <sys_created_on>2017-04-27 22:47:35</sys_created_on>

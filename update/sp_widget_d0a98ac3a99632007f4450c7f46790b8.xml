@@ -287,14 +287,16 @@ canvas {
 .chart-container {
   flex: 1 0 auto;
   height: calc(100% - 220px - 220px) !important;
+  width: 100% !important;
+  padding: 2%;
   
   div {
     height: 100%;
+    width: 100%;
   }
   
   canvas {
-    height: 100% !important;
-    margin: 50px;
+    
   }
 }
 
@@ -1547,15 +1549,18 @@ canvas {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
 	
-	data.chartWidget = $sp.getWidget('sp-charts', {
-		chart_type: 'line-area',
-		table: 'incident',
-		display_field: 'category',
-		color_theme: 'dark',
-		filter: 'active=true^EQ',
-		aggregation_function: 'COUNT',
-		aggregation_field: 'state',
-		hide_legend: true
+	data.chartWidget = $sp.getWidget('trend-chart', {
+		"table": "incident",
+		"display_field": "assignment_group",
+		"color_theme": "dark",
+		"filter": "active=true^EQ",
+		"aggregation_function": "COUNT",
+		"trend_field": "opened_at",
+		"trend_field_ref": "timeref",
+		"trend": "Month",
+	  "chart_type": "line-area",
+		"null_value": "0",
+		"hide_legend": true
 	});
 })();]]></script>
         <servicenow>false</servicenow>
@@ -1563,14 +1568,14 @@ canvas {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-27 20:08:14</sys_created_on>
         <sys_id>d0a98ac3a99632007f4450c7f46790b8</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_name>dashboard-two-k17-widget</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_widget_d0a98ac3a99632007f4450c7f46790b8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-04-27 23:13:56</sys_updated_on>
+        <sys_updated_on>2017-04-28 20:48:53</sys_updated_on>
         <template><![CDATA[<div class="main flex flex-row alt-theme">
         <div class="wrapper flex flex-row">
             <div class="d2-sidebar">
