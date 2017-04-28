@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>trendChart</name>
+        <script><![CDATA[function() { 
+	return {
+		restrict: 'E',
+		replace: true,
+		scope: {
+			chartType: '@',
+			chartOpts: '@',
+			chartData: '='
+		},
+		template: '<canvas/>',
+		link: function(scope, element) {
+			var canvas = element.get(0).getContext('2d');
+			var opts = JSON.parse(scope.chartOpts);
+			
+			if(opts.defaultFontColor) {
+				Chart.defaults.global.defaultFontColor = opts.defaultFontColor;
+			}
+			
+			var chart = new Chart(canvas, {
+				type: scope.chartType === 'line-area' ? 'line' : scope.chartType,
+				data: scope.chartData,
+				options: opts
+			});
+			
+			scope.$watch('chartData', function() {
+				if(!scope.chartData) { return; }
+				
+				chart.data.labels = scope.chartData.labels;
+				chart.data.datasets = scope.chartData.datasets;
+				chart.update();
+			});
+		}
+	}
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-28 23:35:47</sys_created_on>
+        <sys_id>c7d20027e7923200cda9a117c2f6a922</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>trendChart</sys_name>
+        <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
+        <sys_update_name>sp_angular_provider_c7d20027e7923200cda9a117c2f6a922</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-04-28 23:35:47</sys_updated_on>
+        <type>directive</type>
+    </sp_angular_provider>
+</record_update>

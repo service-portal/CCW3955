@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>chart-2.5.0.js</display_name>
+        <source>local</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-28 23:51:41</sys_created_on>
+        <sys_id>1aa48827e7923200cda9a117c2f6a964</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>chart-2.5.0.js</sys_name>
+        <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
+        <sys_ui_script display_value="x_snc_dashboard.chart-250-js">aa76c067e7923200cda9a117c2f6a9cb</sys_ui_script>
+        <sys_update_name>sp_js_include_1aa48827e7923200cda9a117c2f6a964</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-04-28 23:51:41</sys_updated_on>
+        <url/>
+    </sp_js_include>
+</record_update>
