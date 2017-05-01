@@ -73,15 +73,27 @@
         <internal>false</internal>
         <link/>
         <name>Trend Chart</name>
-        <option_schema>[{"name":"table","label":"Table","type":"string"},{"name":"display_field","label":"Display Field","type":"string"},{"name":"filter","label":"Filter","type":"string"},{"name":"aggregation_function","label":"Aggregation Function","type":"string"},{"name":"trend_field","label":"Trend Field","type":"string"},{"name":"trend_field_ref","label":"Trend Field Ref","type":"string"},{"name":"trend","label":"Trend","type":"string"},{"name":"color_theme","label":"Color Theme","type":"choice","choices":[{"label":"Dark","value":"Dark"},{"label":"Light","value":"Light"}]},{"name":"chart_type","default_value":"","label":"Chart Type","type":"string"},{"name":"null_value","default_value":"","label":"Null Value","type":"string"}]</option_schema>
+        <option_schema>[{"name":"table","label":"Table","type":"string"},{"name":"display_field","label":"Display Field","type":"string"},{"name":"filter","label":"Filter","type":"string"},{"name":"aggregation_function","label":"Aggregation Function","type":"string"},{"name":"trend_field","label":"Trend Field","type":"string"},{"name":"trend_field_ref","label":"Trend Field Ref","type":"string"},{"name":"trend","label":"Trend","type":"string"},{"name":"color_theme","label":"Color Theme","type":"choice","choices":[{"label":"Dark","value":"Dark"},{"label":"Light","value":"Light"}]},{"name":"chart_type","default_value":"","label":"Chart Type","type":"string"},{"name":"null_value","default_value":"","label":"Null Value","type":"string"},{"name":"hide_horizontal_lines","label":"Hide Horizontal Lines","type":"boolean"},{"name":"hide_vertical_lines","label":"Hide Vertical Lines","type":"boolean"}]</option_schema>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
 	if(!options.table) return;
 	
+	function getFriendlyLabel(label, trend) {
+		trend = trend.toLowerCase();
+		var l = label.split('/');
+		
+		if(trend === 'week') {
+			return 'W-' + l[0];
+		}
+		
+		return label;
+	}
+	
 	function getChartData(options) {
 		var trend = new GlideAggregate(options.table);
 	
+		trend.addQuery(options.filter);
 		trend.addTrend (options.trend_field, options.trend);
 		trend.groupBy(options.display_field);
 		trend.addAggregate(options.aggregation_function);
@@ -91,10 +103,10 @@
 		var categories = {};
 		
 		while(trend.next()) {
-			var label = trend.getValue(options.trend_field_ref);
+			var label = getFriendlyLabel(trend.getValue(options.trend_field_ref), options.trend);
 			var category = trend.getDisplayValue(options.display_field) || '(' + gs.getMessage('empty') + ')';
 			var value = trend.getAggregate(options.aggregation_function);
-
+			
 			data[label] = "_";
 			categories[category] = categories[category] || {};
 			categories[category][label] = value;
@@ -140,13 +152,15 @@
 				xAxes: [{
 					gridLines: {
 						color: 'rgba(255,255,255,0.1)',
-						zeroLineColor: 'rgba(255,255,255,0.25)'
+						zeroLineColor: 'rgba(255,255,255,0.25)',
+						display: !options.hide_vertical_lines
 					}
 				}],
 				yAxes: [{
 					gridLines: {
 						color: 'rgba(255,255,255,0.1)',
-						zeroLineColor: 'rgba(255,255,255,0.25)'
+						zeroLineColor: 'rgba(255,255,255,0.25)',
+						display: !options.hide_horizontal_lines
 					}
 				}]
 			};
@@ -163,14 +177,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-28 23:10:03</sys_created_on>
         <sys_id>f61df793e7923200cda9a117c2f6a9a8</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>Trend Chart</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_widget_f61df793e7923200cda9a117c2f6a9a8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-01 17:00:51</sys_updated_on>
+        <sys_updated_on>2017-05-01 19:50:35</sys_updated_on>
         <template><![CDATA[<div class="snc-sp-chart-{{c.options.color_theme || 'light'}}">
   <h4 ng-if="c.options.title">{{c.options.title}}</h4>
   <trend-chart ng-if="c.options.table" chart-type="{{c.options.chart_type}}" chart-data="c.data.chartData" chart-opts="{{c.data.chartOptions}}"></sp-chart>

@@ -126,14 +126,15 @@ canvas {
 		"table": "incident",
 		"display_field": "assignment_group",
 		"color_theme": "dark",
-		"filter": "active=true^EQ",
+		"filter": "active=true^assignment_groupISEMPTY^sys_created_on>=javascript:gs.monthsAgoStart(6)^EQ",
 		"aggregation_function": "COUNT",
 		"trend_field": "opened_at",
 		"trend_field_ref": "timeref",
-		"trend": "Month",
+		"trend": "Week",
 	  "chart_type": "line-area",
 		"null_value": "0",
-		"hide_legend": true
+		"hide_legend": true,
+		"hide_horizontal_lines": true
 	});
 })();]]></script>
         <servicenow>false</servicenow>
@@ -141,14 +142,14 @@ canvas {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-26 21:45:21</sys_created_on>
         <sys_id>2e86d5bea91232007f4450c7f46790d7</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_name>dashboard-summary-row</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_widget_2e86d5bea91232007f4450c7f46790d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-01 17:18:59</sys_updated_on>
+        <sys_updated_on>2017-05-01 19:54:04</sys_updated_on>
         <template><![CDATA[<div class="dsr-root">
   <div class="chart flex">
     <sp-widget widget="c.data.chartWidget"></sp-widget>
