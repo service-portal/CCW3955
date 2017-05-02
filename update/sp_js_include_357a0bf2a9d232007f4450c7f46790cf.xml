@@ -6,11 +6,13 @@
         <sys_class_name>sp_js_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-27 06:12:33</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>357a0bf2a9d232007f4450c7f46790cf</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>gauges js</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_ui_script display_value="x_snc_dashboard.gauges js">9a8a4bf2a9d232007f4450c7f467906f</sys_ui_script>
         <sys_update_name>sp_js_include_357a0bf2a9d232007f4450c7f46790cf</sys_update_name>

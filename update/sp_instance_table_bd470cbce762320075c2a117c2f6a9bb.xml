@@ -27,17 +27,19 @@
         <sys_class_name>sp_instance_table</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-05-02 21:07:16</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>bd470cbce762320075c2a117c2f6a9bb</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_name/>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Change Requests</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_instance_table_bd470cbce762320075c2a117c2f6a9bb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-02 21:48:35</sys_updated_on>
+        <sys_updated_on>2017-05-02 22:08:15</sys_updated_on>
         <table>change_request</table>
-        <title/>
+        <title>Change Requests</title>
         <url/>
         <widget_parameters><![CDATA[{
 	"aggregation_function": {

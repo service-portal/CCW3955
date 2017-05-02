@@ -3,28 +3,28 @@
     <sys_embedded_help_content action="INSERT_OR_UPDATE">
         <active>true</active>
         <content/>
-        <last_sync>2017-04-27 04:38:35</last_sync>
+        <last_sync>2017-05-02 22:06:44</last_sync>
         <modifier>normal</modifier>
-        <name>normal-normal</name>
-        <page>normal</page>
+        <name>sp_widget-normal</name>
+        <page>sp_widget</page>
         <product>1</product>
         <qualifier/>
         <snc_created>true</snc_created>
         <sys_class_name>sys_embedded_help_content</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-04-27 04:38:35</sys_created_on>
+        <sys_created_on>2017-05-02 22:06:44</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>f3153af6a99232007f4450c7f46790fa</sys_id>
+        <sys_id>d6f418b05b2232006b11c7ad31f91ae9</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>normal-normal</sys_name>
+        <sys_name>sp_widget-normal</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
-        <sys_update_name>sys_embedded_help_content_f3153af6a99232007f4450c7f46790fa</sys_update_name>
+        <sys_update_name>sys_embedded_help_content_d6f418b05b2232006b11c7ad31f91ae9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-04-27 04:38:35</sys_updated_on>
-        <version>j</version>
+        <sys_updated_on>2017-05-02 22:06:44</sys_updated_on>
+        <version>h</version>
     </sys_embedded_help_content>
-    <sys_translated_text action="delete_multiple" query="documentkey=f3153af6a99232007f4450c7f46790fa"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=d6f418b05b2232006b11c7ad31f91ae9"/>
 </record_update>
