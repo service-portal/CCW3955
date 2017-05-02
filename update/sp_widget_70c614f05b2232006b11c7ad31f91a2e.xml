@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($interval) {
+  var c = this;
+	$interval(function() {
+		c.time = moment().format('h:mm a');
+	}, 1000);	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.time {
+	padding-left: 20px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>dashboard-time</id>
+        <internal>false</internal>
+        <link/>
+        <name>dashboard-time</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-02 22:14:32</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>70c614f05b2232006b11c7ad31f91a2e</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>dashboard-time</sys_name>
+        <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
+        <sys_update_name>sp_widget_70c614f05b2232006b11c7ad31f91a2e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-02 22:26:48</sys_updated_on>
+        <template><![CDATA[<div>
+  <div class="time h3" ng-bind="c.time"></div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
