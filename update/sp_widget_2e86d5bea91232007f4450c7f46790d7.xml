@@ -131,17 +131,17 @@ canvas {
 	data.chartWidget = $sp.getWidget('trend-chart', {
 		"table": options.table,
 		"display_field": options.display_field,
-		"color_theme": "dark",
 		"filter": options.filter,
 		"aggregation_function": options.aggregation_function,
 		"trend_field": options.trend_field,
 		"trend_field_ref": options.trend_field_ref,
 		"trend": options.trend,
-	  "chart_type": "line-area",
+		"series_color": options.series_color,
+		"color_theme": "dark",
+		"chart_type": "line-area",
 		"null_value": "0",
 		"hide_legend": true,
-		"hide_horizontal_lines": true,
-		"series_color": options.series_color
+		"hide_horizontal_lines": true
 	});
 })();]]></script>
         <servicenow>false</servicenow>
@@ -149,14 +149,14 @@ canvas {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-26 21:45:21</sys_created_on>
         <sys_id>2e86d5bea91232007f4450c7f46790d7</sys_id>
-        <sys_mod_count>71</sys_mod_count>
+        <sys_mod_count>72</sys_mod_count>
         <sys_name>dashboard-summary-row</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_widget_2e86d5bea91232007f4450c7f46790d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-02 22:09:45</sys_updated_on>
+        <sys_updated_on>2017-05-02 22:58:11</sys_updated_on>
         <template><![CDATA[<div class="dsr-root">
   <div class="chart flex">
     <h3 ng-bind="c.options.title">
