@@ -4,7 +4,22 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>name</element>
-            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">03e34427e7923200cda9a117c2f6a995</list_id>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-28 23:49:21</sys_created_on>
+            <sys_id>2a164067e7923200cda9a117c2f6a9d8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-28 23:49:21</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>name</element>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
@@ -19,7 +34,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>active</element>
-            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">03e34427e7923200cda9a117c2f6a995</list_id>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
@@ -33,8 +48,23 @@
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
+            <element>active</element>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-28 23:49:21</sys_created_on>
+            <sys_id>aa164067e7923200cda9a117c2f6a9d8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-28 23:49:21</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
             <element>description</element>
-            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">03e34427e7923200cda9a117c2f6a995</list_id>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
@@ -48,8 +78,38 @@
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
+            <element>description</element>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-28 23:49:21</sys_created_on>
+            <sys_id>2e164067e7923200cda9a117c2f6a9d8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-28 23:49:21</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
             <element>global</element>
-            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">03e34427e7923200cda9a117c2f6a995</list_id>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-28 23:49:21</sys_created_on>
+            <sys_id>ae164067e7923200cda9a117c2f6a9d8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-28 23:49:21</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>global</element>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
@@ -64,7 +124,22 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>script</element>
-            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">03e34427e7923200cda9a117c2f6a995</list_id>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-28 23:49:21</sys_created_on>
+            <sys_id>22164067e7923200cda9a117c2f6a9d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-28 23:49:21</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>script</element>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
@@ -79,7 +154,22 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>script_name</element>
-            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">03e34427e7923200cda9a117c2f6a995</list_id>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-28 23:49:21</sys_created_on>
+            <sys_id>a2164067e7923200cda9a117c2f6a9d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-28 23:49:21</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>script_name</element>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>5</position>
@@ -94,7 +184,22 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>use_scoped_format</element>
-            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">03e34427e7923200cda9a117c2f6a995</list_id>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-28 23:49:21</sys_created_on>
+            <sys_id>26164067e7923200cda9a117c2f6a9d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-28 23:49:21</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>use_scoped_format</element>
+            <list_id display_value="sys_ui_script" element="NULL" name="sys_ui_script" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">a2164067e7923200cda9a117c2f6a9d8</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>6</position>
@@ -121,7 +226,7 @@
             <sys_created_on>2017-04-28 23:50:05</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>05464067e7923200cda9a117c2f6a9c6</sys_id>
+            <sys_id>6cf58c27e7923200cda9a117c2f6a9b8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name/>
             <sys_package/>

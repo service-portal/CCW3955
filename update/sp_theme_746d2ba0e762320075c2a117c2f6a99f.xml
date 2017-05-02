@@ -5,19 +5,19 @@
         <footer/>
         <footer_fixed>true</footer_fixed>
         <header/>
-        <name>k17-ds2</name>
+        <name>k17-ds1</name>
         <navbar_fixed>true</navbar_fixed>
         <sys_class_name>sp_theme</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-04-27 06:11:43</sys_created_on>
-        <sys_id>646a0bf2a9d232007f4450c7f4679072</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>k17-ds2</sys_name>
+        <sys_created_on>2017-05-02 19:13:53</sys_created_on>
+        <sys_id>746d2ba0e762320075c2a117c2f6a99f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>k17-ds1</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
-        <sys_update_name>sp_theme_646a0bf2a9d232007f4450c7f4679072</sys_update_name>
+        <sys_update_name>sp_theme_746d2ba0e762320075c2a117c2f6a99f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-02 19:13:28</sys_updated_on>
+        <sys_updated_on>2017-05-02 19:13:53</sys_updated_on>
     </sp_theme>
 </record_update>
