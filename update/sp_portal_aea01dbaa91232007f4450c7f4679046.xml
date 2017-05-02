@@ -14,7 +14,6 @@ $purple:      #C792EA;&#13;
 $violet:      #bb80b3;&#13;
 $brown:       #ab7967;&#13;
 &#13;
-&#13;
 * {&#13;
   box-sizing: border-box;&#13;
 }&#13;
@@ -26,6 +25,13 @@ html, body {&#13;
   min-height: 100%;&#13;
   -webkit-font-smoothing: antialiased;&#13;
 }&#13;
+&#13;
+section.page {&#13;
+  background: #292D3F;&#13;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;&#13;
+  font-weight: 400;&#13;
+  font-size: 16px;&#13;
+  color: #fff;&#13;
 &#13;
 .container {&#13;
   width: 100%;&#13;
@@ -47,14 +53,6 @@ header {&#13;
 &#13;
 h2.time {&#13;
   font-size: 1.5em;&#13;
-}&#13;
-&#13;
-body {&#13;
-  background: #292D3F;&#13;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;&#13;
-  font-weight: 400;&#13;
-  color: #fff;&#13;
-  font-size: 16px;&#13;
 }&#13;
 &#13;
 .body.padding-top{&#13;
@@ -477,6 +475,7 @@ canvas {&#13;
   border-radius: 4px;&#13;
   margin: auto;&#13;
 }&#13;
+}&#13;
 </css_variables>
         <default>true</default>
         <homepage display_value="dashboard_1">0b70917aa91232007f4450c7f46790dc</homepage>
@@ -497,14 +496,14 @@ canvas {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-26 21:19:59</sys_created_on>
         <sys_id>aea01dbaa91232007f4450c7f4679046</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Dashboard 1</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_portal_aea01dbaa91232007f4450c7f4679046</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-02 19:32:34</sys_updated_on>
+        <sys_updated_on>2017-05-02 20:47:40</sys_updated_on>
         <theme display_value="k17-ds1">746d2ba0e762320075c2a117c2f6a99f</theme>
         <title>Dashboard 1</title>
         <url_suffix>d1</url_suffix>
