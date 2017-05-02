@@ -488,19 +488,18 @@ canvas {&#13;
         <quick_start_config/>
         <sc_catalog/>
         <sc_catalog_page/>
+        <sc_category_page/>
         <sp_chat_queue/>
         <sp_rectangle_menu/>
         <sqanda_knowledge_base/>
         <sys_class_name>sp_portal</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-26 21:19:59</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>aea01dbaa91232007f4450c7f4679046</sys_id>
         <sys_mod_count>10</sys_mod_count>
         <sys_name>Dashboard 1</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_portal_aea01dbaa91232007f4450c7f4679046</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>

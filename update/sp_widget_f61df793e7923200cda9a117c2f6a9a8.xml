@@ -2,37 +2,13 @@
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <client_script><![CDATA[function($scope, spUtil) {
-	function colorizeChart(data, theme) {
-		colors = [
-			'rgba(0,200,100,0.5)',
-			'rgba(255,50,0,0.5)',
-			'rgba(50,50,200,0.5)',
-			'rgba(255,255,50,0.5)',
-			'rgba(255,50,255,0.5)',
-			'rgba(0,255,255,0.5)',
-			'rgba(128,255,128,0.5)',
-			'rgba(255,128,0,.5)',
-			'rgba(166,144,113,.5)',
-			'rgba(255,255,100,0.5)'
-		];
-		
-		data.datasets.forEach(function(ds, i) {
-			ds.backgroundColor = c.options.series_color || colors[i];
-		});
-	}
-	
-  var c = this;
+	var c = this;
 	
 	if(!c.options.table) { return; }
 	
 	spUtil.recordWatch($scope, c.options.table, c.options.filter, function() {
 		c.data.chartData = null;
-		c.server.update().then(function(){
-			colorizeChart(c.data.chartData, c.options.color_theme);
-		});
 	});
-	
-	colorizeChart(c.data.chartData, c.options.color_theme);
 }]]></client_script>
         <controller_as>c</controller_as>
         <css>.snc-sp-chart-light,&#13;
@@ -79,6 +55,21 @@
         <script><![CDATA[(function() {
 	if(!options.table) return;
 	
+	function getColor(index, options) {
+		return options.series_color || [
+			'rgba(0,200,100,0.5)',
+			'rgba(255,50,0,0.5)',
+			'rgba(50,50,200,0.5)',
+			'rgba(255,255,50,0.5)',
+			'rgba(255,50,255,0.5)',
+			'rgba(0,255,255,0.5)',
+			'rgba(128,255,128,0.5)',
+			'rgba(255,128,0,.5)',
+			'rgba(166,144,113,.5)',
+			'rgba(255,255,100,0.5)'
+		][index];
+	}
+	
 	function getFriendlyLabel(label, trend) {
 		trend = trend.toLowerCase();
 		var l = label.split('/');
@@ -118,9 +109,10 @@
 			datasets: []
 		};
 		
-		Object.keys(categories).forEach(function(category) {
+		Object.keys(categories).forEach(function(category, index) {
 			var dt = {
 				label: category,
+				backgroundColor: getColor(index, options),
 				data: []
 			}
 			
@@ -176,17 +168,15 @@
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-28 23:10:03</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>f61df793e7923200cda9a117c2f6a9a8</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>Trend Chart</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_widget_f61df793e7923200cda9a117c2f6a9a8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-02 21:43:37</sys_updated_on>
+        <sys_updated_on>2017-05-02 22:29:29</sys_updated_on>
         <template><![CDATA[<div class="snc-sp-chart-{{c.options.color_theme || 'light'}}">
   <h4 ng-if="c.options.title">{{c.options.title}}</h4>
   <trend-chart ng-if="c.options.table" chart-type="{{c.options.chart_type}}" chart-data="c.data.chartData" chart-opts="{{c.data.chartOptions}}"></sp-chart>
