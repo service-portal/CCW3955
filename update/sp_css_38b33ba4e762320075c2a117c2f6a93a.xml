@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sp_portal">
-    <sp_portal action="INSERT_OR_UPDATE">
-        <css_variables>$bg:          #292D3F;&#13;
-$text:        #fff;  &#13;
-$red:         #FF5370;&#13;
-$pink:        #f07178;&#13;
-$orange:      #F78C6C;&#13;
-$yellow:      #FFCB6B;&#13;
-$green:       #C3E88D;&#13;
-$cyan:        #89DDFF;&#13;
-$blue:        #82AAFF;&#13;
-$purple:      #C792EA;&#13;
-$violet:      #bb80b3;&#13;
-$brown:       #ab7967;&#13;
-&#13;
-&#13;
-* {&#13;
+<record_update table="sp_css">
+    <sp_css action="INSERT_OR_UPDATE">
+        <css>/** {&#13;
   box-sizing: border-box;&#13;
 }&#13;
 &#13;
@@ -477,37 +463,19 @@ canvas {&#13;
   border-radius: 4px;&#13;
   margin: auto;&#13;
 }&#13;
-</css_variables>
-        <default>true</default>
-        <homepage display_value="dashboard_1">0b70917aa91232007f4450c7f46790dc</homepage>
-        <icon/>
-        <kb_knowledge_base/>
-        <kb_knowledge_page/>
-        <login_page/>
-        <logo/>
-        <notfound_page/>
-        <quick_start_config/>
-        <sc_catalog/>
-        <sc_catalog_page/>
-        <sc_category_page/>
-        <sp_chat_queue/>
-        <sp_rectangle_menu/>
-        <sqanda_knowledge_base/>
-        <sys_class_name>sp_portal</sys_class_name>
+*/</css>
+        <name>ds1</name>
+        <sys_class_name>sp_css</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-04-26 21:19:59</sys_created_on>
-        <sys_id>aea01dbaa91232007f4450c7f4679046</sys_id>
-        <sys_mod_count>6</sys_mod_count>
-        <sys_name>Dashboard 1</sys_name>
+        <sys_created_on>2017-05-02 19:41:26</sys_created_on>
+        <sys_id>38b33ba4e762320075c2a117c2f6a93a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>ds1</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
-        <sys_update_name>sp_portal_aea01dbaa91232007f4450c7f4679046</sys_update_name>
+        <sys_update_name>sp_css_38b33ba4e762320075c2a117c2f6a93a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-02 19:32:34</sys_updated_on>
-        <theme display_value="k17-ds1">746d2ba0e762320075c2a117c2f6a99f</theme>
-        <title>Dashboard 1</title>
-        <url_suffix>d1</url_suffix>
-    </sp_portal>
-    <sys_translated_text action="delete_multiple" query="documentkey=aea01dbaa91232007f4450c7f4679046"/>
+        <sys_updated_on>2017-05-02 19:50:06</sys_updated_on>
+    </sp_css>
 </record_update>

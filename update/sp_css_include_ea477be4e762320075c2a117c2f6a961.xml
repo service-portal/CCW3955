@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_css_include">
+    <sp_css_include action="INSERT_OR_UPDATE">
+        <name>compiled ds1</name>
+        <source>url</source>
+        <sp_css/>
+        <sys_class_name>sp_css_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-02 19:57:24</sys_created_on>
+        <sys_id>ea477be4e762320075c2a117c2f6a961</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>compiled ds1</sys_name>
+        <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
+        <sys_update_name>sp_css_include_ea477be4e762320075c2a117c2f6a961</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-02 19:57:24</sys_updated_on>
+        <url>/styles/scss/sp.scss?portal_id=aea01dbaa91232007f4450c7f4679046</url>
+    </sp_css_include>
+</record_update>
