@@ -941,48 +941,6 @@ $('.sidebar-close-trigger').click(function(event) {
     $('.sidebar-trigger').removeClass('is-hidden');
 });
 
-// ==========================================
-//   ___   _  _   _  ___ ___ ___ 
-//  / __| /_\| | | |/ __| __/ __|
-// | (_ |/ _ \ |_| | (_ | _|\__ \
-//  \___/_/ \_\___/ \___|___|___/
-// ==========================================    
-// 
-// Powers each 'dial'
-// http://d.pr/AQ6G/5PL4sN04
-var opts = {
-    lines: 12,
-    angle: -0.1,
-    lineWidth: 0.1,
-    limitMax: "false",
-    percentColors: [
-        [0.0, "#C3E88D"],
-        [0.25, "#89DDFF"],
-        [0.50, "#FFCB6B"],
-        [0.75, "#f07178"],
-        [0.95, "#FF5370"]
-    ], // !!!!
-    strokeColor: "#161824",
-    generateGradient: true,
-    pointer: {
-        length: 0.6, // // Relative to gauge radius
-        strokeWidth: 0, // The thickness
-        color: "#000000" // Fill color
-    }
-};
-
-
-
-if (document.getElementById("dial")) {
-    var target1 = document.getElementById("dial");
-    var dial1 = new Gauge(target1).setOptions(opts);
-
-    dial1.setTextField(target1.nextElementSibling);
-    dial1.maxValue = 300;
-    dial1.animationSpeed = 15;
-    dial1.set(getRandomInt(1, 300));
-}
-
 // =================================================== 
 //    _   _  _ ___ __  __   _ _____ ___ ___  _  _ ___  
 //   /_\ | \| |_ _|  \/  | /_\_   _|_ _/ _ \| \| / __| 
@@ -996,7 +954,6 @@ if (document.getElementById("dial")) {
 function rollCounters(delay) {
     anime({
         targets: ".red",
-        innerHTML: getRandomInt(1, 100),
         round: 1,
         easing: "easeOutExpo",
         duration: 1750,
@@ -1005,7 +962,6 @@ function rollCounters(delay) {
 
     anime({
         targets: ".blue",
-        innerHTML: getRandomInt(1, 100),
         round: 1,
         easing: "easeOutExpo",
         duration: 1750,
@@ -1014,7 +970,6 @@ function rollCounters(delay) {
 
     anime({
         targets: ".yellow",
-        innerHTML: getRandomInt(1, 100),
         round: 1,
         easing: "easeOutExpo",
         duration: 1750,
@@ -1023,7 +978,6 @@ function rollCounters(delay) {
 
     anime({
         targets: ".green",
-        innerHTML: getRandomInt(1, 100),
         round: 1,
         easing: "easeOutExpo",
         duration: 1750,
@@ -1092,14 +1046,14 @@ var statdivs = anime({
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-27 04:31:26</sys_created_on>
         <sys_id>8492b2f6a99232007f4450c7f46790c0</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>x_snc_dashboard.dashboard_1_script</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sys_ui_script_8492b2f6a99232007f4450c7f46790c0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-04-27 17:36:19</sys_updated_on>
+        <sys_updated_on>2017-05-04 18:36:33</sys_updated_on>
         <use_scoped_format>false</use_scoped_format>
     </sys_ui_script>
 </record_update>
