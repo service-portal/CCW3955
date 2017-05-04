@@ -4,8 +4,8 @@
         <client_script><![CDATA[function($scope, spUtil) {
   var c = this;
 	
-	spUtil.recordWatch($scope, c.options.table, null, function() {
-		c.data.percentageActive = null;
+	spUtil.recordWatch($scope, c.options.table, c.options.filter, function() {
+		c.data.percentageHigh = null;
 	});
 }]]></client_script>
         <controller_as>c</controller_as>
@@ -83,13 +83,13 @@ canvas {
 	gauge.maxValue = 100;
 	gauge.animationSpeed = 15;
 	
-	gauge.set(scope.c.data.percentageActive);
+	gauge.set(scope.c.data.percentageHigh);
 	
 	scope.$watch(function() {
-		return scope.c.data.percentageActive;
+		return scope.c.data.percentageHigh;
 	}, function() {
-		if(!scope.c.data.percentageActive) { return; }
-		gauge.set(scope.c.data.percentageActive);
+		if(!scope.c.data.percentageHigh) { return; }
+		gauge.set(scope.c.data.percentageHigh);
 	});
 }]]></link>
         <name>dashboard-summary-row</name>
@@ -116,28 +116,33 @@ canvas {
 	
 	var colors = ['red', 'blue', 'yellow', 'green'];
 	
-	function getPercentageActive() {
+	function getPercentageHigh() {
 		var ga = new GlideAggregate(options.table);
-		ga.groupBy('active');
+		ga.addQuery(options.filter);
+		ga.groupBy('priority');
 		ga.addAggregate('COUNT');
 		ga.query();
 		
-		var active, inactive;
+		var high = 0;
+		var low = 0
 		
 		while(ga.next()) {
-			if(ga.getValue('active') === 'true') {
-				active = ga.getAggregate('COUNT');
+			var priority = ga.getDisplayValue('priority');
+			
+			if(priority !== '1 - Critical' && priority !== '2 - High') {
+				low = ga.getAggregate('COUNT');
 			} else {
-				inactive = ga.getAggregate('COUNT');
+				high = ga.getAggregate('COUNT');
 			}
 		}
 		
-		var percentage = Math.ceil((active * 100) / (active + inactive));
+		var percentage = Math.ceil((high * 100) / (high + low));
 		return percentage > 100 ? 100 : percentage;
 	}
 	
 	function getGroups() {
 		var ga = new GlideAggregate(options.table);
+		ga.addQuery(options.filter);
 		ga.groupBy(options.group_field);
 		ga.addAggregate('COUNT');
 		ga.query();
@@ -160,22 +165,96 @@ canvas {
 		return groups;
 	}
 	
-	data.percentageActive = getPercentageActive();
+	function getAssignmentStats() {
+		var ga = new GlideAggregate(options.table);
+		ga.addQuery(options.filter);
+		ga.groupBy('assigned_to');
+		ga.addAggregate('COUNT');
+		ga.query();
+		
+		var unassigned = 0;
+		var total = 0;
+		var users = 0;
+		
+		while(ga.next()) {
+			if(!ga.getDisplayValue('assigned_to')) { 
+				unassigned++;
+				continue;
+			}
+			
+			total += parseInt(ga.getAggregate('COUNT'), 10);
+			users++;
+		}
+		
+		return {
+			unassigned: unassigned,
+			avgAssigned: total / users
+		};
+	}
+	
+	function getStateStats() {
+		var opened = 0;
+		var open_total = 0;
+		
+		var closed = 0;
+		var close_total = 0;
+		
+		var ot = new GlideAggregate(options.table);
+	
+		ot.addQuery(options.filter);
+		ot.addTrend('opened_at', 'Month');
+		ot.addAggregate('COUNT');
+		ot.query();
+		
+		while(ot.next()) {
+			opened += parseInt(ot.getAggregate('COUNT'), 10);
+			open_total++;
+		}
+		
+		var ct = new GlideAggregate(options.table);
+	
+		ct.addQuery(options.filter);
+		ct.addTrend('closed_at', 'Month');
+		ct.addAggregate('COUNT');
+		ct.query();
+		
+		while(ct.next()) {
+			closed += parseInt(ct.getAggregate('COUNT'), 10);
+			close_total++;
+		}
+		
+		return {
+			avgClosed: closed / close_total,
+			avgNew: opened / open_total
+		};
+	}
+	
+	data.percentageHigh = getPercentageHigh();
 	data.groups = getGroups();
+	
+	var assignmentStats = getAssignmentStats();
+	var stateStats = getStateStats();
+	
+	data.stats = {
+		unassigned: assignmentStats.unassigned,
+		avgAssigned: assignmentStats.avgAssigned,
+		avgClosed: stateStats.avgClosed,
+		avgNew: stateStats.avgNew
+	}
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-26 21:45:21</sys_created_on>
         <sys_id>2e86d5bea91232007f4450c7f46790d7</sys_id>
-        <sys_mod_count>114</sys_mod_count>
+        <sys_mod_count>160</sys_mod_count>
         <sys_name>dashboard-summary-row</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_widget_2e86d5bea91232007f4450c7f46790d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-04 18:22:13</sys_updated_on>
+        <sys_updated_on>2017-05-04 20:00:51</sys_updated_on>
         <template><![CDATA[<div class="dsr-root">
   <div class="chart flex">
     <h3 ng-bind="c.options.title"></h3>
@@ -193,22 +272,22 @@ canvas {
       <ul class="col-lg-12">
         <li>
           <div>
-            <div class="col-md-4"><strong>2.54k</strong></div> <div class="col-md-8">RPM</div>
+            <div class="col-md-4"><strong>{{c.data.stats.unassigned}}</strong></div> <div class="col-md-8">Unassigned</div>
           </div>
         </li>
         <li>
           <div>
-            <div class="col-md-4"><strong>0%</strong></div> <div class="col-md-8">Error Rate</div>
+            <div class="col-md-4"><strong>{{c.data.stats.avgClosed | number:2}}</strong></div> <div class="col-md-8">Avg. closed / month</div>
           </div>
         </li>
         <li>
           <div>
-            <div class="col-md-4"><strong>18</strong></div> <div class="col-md-8">Jobs</div>
+            <div class="col-md-4"><strong>{{c.data.stats.avgNew | number:2}}</strong></div> <div class="col-md-8">Avg. new / month</div>
           </div>
         </li>
         <li>
           <div>
-            <div class="col-md-4"><strong>0/160</strong></div> <div class="col-md-8">Workers</div>
+            <div class="col-md-4"><strong>{{c.data.stats.avgAssigned | number:2}}</strong></div> <div class="col-md-8">Avg. assigned / person</div>
           </div>
         </li>
       </ul>
