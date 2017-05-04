@@ -28,14 +28,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-05-02 21:06:20</sys_created_on>
         <sys_id>1f07c8bce762320075c2a117c2f6a94e</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Problems</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_instance_table_1f07c8bce762320075c2a117c2f6a94e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-02 22:07:43</sys_updated_on>
+        <sys_updated_on>2017-05-04 18:22:39</sys_updated_on>
         <table>problem</table>
         <title>Problems</title>
         <url/>
@@ -59,6 +59,10 @@
 	"series_color": {
 		"value": "rgba(0,255,255,0.5)",
 		"displayValue": "rgba(0,255,255,0.5)"
+	},
+	"group_field": {
+		"value": "assignment_group",
+		"displayValue": "assignment_group"
 	}
 }]]></widget_parameters>
     </sp_instance_table>
