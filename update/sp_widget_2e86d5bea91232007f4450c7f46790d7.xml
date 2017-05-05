@@ -53,7 +53,8 @@ canvas {
         <has_preview>false</has_preview>
         <id>dashboard-summary-row</id>
         <internal>false</internal>
-        <link><![CDATA[function(scope, element) {
+        <link><![CDATA[function(scope, element, attrs, ctrl) {
+	var $timeout = $injector.get("$timeout");
 	var dial = element.find('.dial').get(0);
 	var gauge = null;
 	
@@ -91,6 +92,37 @@ canvas {
 		if(!scope.c.data.percentageHigh) { return; }
 		gauge.set(scope.c.data.percentageHigh);
 	});
+	
+	$timeout(function() {
+		var targets = {};
+		var elements = {};
+		var groups = ctrl.data.groups;
+		var groupCount = ctrl.data.groups.length;
+		
+		var setup = {
+			targets: targets,
+			innerHTML: 1234,
+			round: 1,
+			easing: "easeOutExpo",
+			duration: 3000,
+			update: function(anim) {
+        for(var i=0;i<=groupCount-1; i++){
+					var key = "num-"+i
+					elements[key].innerHTML = targets[key];
+				}
+			}
+		};
+		
+		for(var i=0;i<=groupCount-1; i++) {
+			var key = "num-" + i;
+			targets[key] = 120;
+			setup[key] = groups[i].value;
+			elements[key] = element.find("h2." + key).get(0);
+		}
+		
+		
+		anime(setup);
+	}, 100);
 }]]></link>
         <name>dashboard-summary-row</name>
         <option_schema>[{"name":"aggregation_function","default_value":"COUNT","label":"Aggregation Function","type":"choice","choices":[{"label":"COUNT","value":"COUNT"},{"label":"SUM","value":"SUM"},{"label":"AVG","value":"AVG"},{"label":"MIN","value":"MIN"},{"label":"MAX","value":"MAX"}]},{"name":"trend_field","label":"Trend Field","type":"string"},{"name":"trend_field_ref","label":"Trend Field Ref","type":"string"},{"name":"trend","label":"Trend","type":"string"},{"name":"series_color","label":"Series Color","type":"string"},{"name":"group_field","label":"Group Field","type":"string"}]</option_schema>
@@ -247,14 +279,14 @@ canvas {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-26 21:45:21</sys_created_on>
         <sys_id>2e86d5bea91232007f4450c7f46790d7</sys_id>
-        <sys_mod_count>160</sys_mod_count>
+        <sys_mod_count>189</sys_mod_count>
         <sys_name>dashboard-summary-row</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_widget_2e86d5bea91232007f4450c7f46790d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-04 20:00:51</sys_updated_on>
+        <sys_updated_on>2017-05-05 18:08:22</sys_updated_on>
         <template><![CDATA[<div class="dsr-root">
   <div class="chart flex">
     <h3 ng-bind="c.options.title"></h3>
@@ -295,10 +327,9 @@ canvas {
   </div> <!-- gauge-wrapper -->
 
   <div class="metric col-md-6 flex">
-    <div class="col-md-3" ng-repeat="g in c.data.groups">
-      <h2 ng-class="g.color">{{g.value}}</h2>
+    <div class="col-md-12" ng-repeat="g in c.data.groups">
+      <h2 class="numbah num-{{$index}}" ng-class="g.color">{{g.value}}</h2>
       <p>{{g.label}}</p>
-    </div>
     </div>
   </div> <!-- metric -->
 
