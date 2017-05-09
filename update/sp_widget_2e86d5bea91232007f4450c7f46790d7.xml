@@ -5,7 +5,9 @@
   var c = this;
 	
 	spUtil.recordWatch($scope, c.options.table, c.options.filter, function() {
-		c.data.percentageHigh = null;
+		c.data.stats = null;
+		c.server.update();
+		$scope.$broadcast("trend-chart.refresh");
 	});
 }]]></client_script>
         <controller_as>c</controller_as>
@@ -279,14 +281,14 @@ canvas {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-26 21:45:21</sys_created_on>
         <sys_id>2e86d5bea91232007f4450c7f46790d7</sys_id>
-        <sys_mod_count>189</sys_mod_count>
+        <sys_mod_count>193</sys_mod_count>
         <sys_name>dashboard-summary-row</sys_name>
         <sys_package display_value="Dashboard" source="x_snc_dashboard">678d017aa91232007f4450c7f467902e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Dashboard">678d017aa91232007f4450c7f467902e</sys_scope>
         <sys_update_name>sp_widget_2e86d5bea91232007f4450c7f46790d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-05 18:08:22</sys_updated_on>
+        <sys_updated_on>2017-05-09 15:36:16</sys_updated_on>
         <template><![CDATA[<div class="dsr-root">
   <div class="chart flex">
     <h3 ng-bind="c.options.title"></h3>
